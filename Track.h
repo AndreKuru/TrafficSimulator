@@ -6,6 +6,7 @@
 #include "array_list.h"
 #include "Car.h"
 #include "linked_List.h"
+#include <ctime>
 
 class Track : public structures::LinkedQueue<Car>{
     structures::LinkedList<Track> *tracks_output;

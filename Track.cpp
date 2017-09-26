@@ -1,4 +1,5 @@
 #include "Track.h"
+#include <ctime>
 
 
 clock_t Track::ride() {
