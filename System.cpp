@@ -7,3 +7,9 @@ void System::add_track(Track track) {
 void System::add_semaphore(Semaphore semaphore) {
     semaphores.push_back(semaphore);
 }
+
+System::System() {
+    // instancie t aqui
+    add_track(t);
+
+}

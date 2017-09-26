@@ -10,6 +10,7 @@ class System {
     structures::LinkedList<Track> tracks;
     structures::LinkedList<Semaphore> semaphores;
 
+ public:
     System();
 
     void add_track(Track track);

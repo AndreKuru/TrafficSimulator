@@ -8,7 +8,13 @@
 #include "linked_List.h"
 
 class Track : public structures::LinkedQueue<Car>{
-    structures::LinkedList<Track> *tracks_output;
+    structures::LinkedList<Track> tracks_output;
+    //! ID
+    std::string id_;
+    //! Fonte tempo base (x onde x+y)
+    int fount_time_;
+    //! Variação do tempo (y onde x+y)
+    int fount_variance_;
     //! km/h
     int speed_;
     //! tamanho em m
@@ -16,8 +22,11 @@ class Track : public structures::LinkedQueue<Car>{
     //! tamanho restante em m
     int available_length_;
 
-    Track(){};
-    Track(int speed, int length):
+ public:
+    Track(std::string id, int fount_time, int fount_variance, int speed, int length):
+        id_{id},
+        fount_time_(fount_time),
+        fount_variance_(fount_variance),
         tracks_output {},
         speed_{speed},
         length_{length},
@@ -35,6 +44,7 @@ class Track : public structures::LinkedQueue<Car>{
 
     //! Desenfileira carro
     Car dequeue();
+
 
 };
 
