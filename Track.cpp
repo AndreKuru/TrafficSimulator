@@ -35,3 +35,23 @@ bool Track::operator!=(const Track &other) {
     return id_!= other.id_;
 }
 
+bool Track::full() {
+    return available_length_ <= 4;
+}
+
+
+bool Track::fill(Car car) {
+    return available_length_ - car.size() >= 0;
+}
+
+void Track::leak() {
+
+
+}
+
+int Track::check_arrival() {
+}
+
+int Track::generate_interval() {
+    return fount_time_ + rand()%(fount_variance_);
+}
