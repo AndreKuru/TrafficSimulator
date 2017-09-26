@@ -9,11 +9,12 @@ class Semaphore {
     structures::LinkedList<Track> afferent_track;
     structures::LinkedList<Track> efferent_tracks;
 
-    Semaphore(Track afferent_track1, Track efferent_track1, Track efferent_track2, Track efferent_track3) {
-        afferent_track.push_back(afferent_track1);
-        efferent_tracks.push_back(efferent_track1);
-        efferent_tracks.push_back(efferent_track2);
-        efferent_tracks.push_back(efferent_track3);
+ public:
+    Semaphore(Track afferent, Track efferent1, Track efferent2, Track efferent3) {
+        afferent_track.push_back(afferent);
+        efferent_tracks.push_back(efferent1);
+        efferent_tracks.push_back(efferent2);
+        efferent_tracks.push_back(efferent3);
     }
 
 };

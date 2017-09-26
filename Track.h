@@ -24,10 +24,13 @@ class Track : public structures::LinkedQueue<Car>{
     int available_length_;
 
  public:
-    Track(std::string id, int fount_time, int fount_variance, int speed, int length):
+    Track(std::string id):
+    id_{id} {};
+
+    Track(std::string id, int fount_time_middle, int fount_variance_middle, int speed, int length):
         id_{id},
-        fount_time_(fount_time),
-        fount_variance_(fount_variance),
+        fount_time_(fount_time_middle-fount_variance_middle),
+        fount_variance_(fount_variance_middle*2),
         tracks_output {},
         speed_{speed},
         length_{length},
@@ -46,6 +49,9 @@ class Track : public structures::LinkedQueue<Car>{
     //! Desenfileira carro
     Car dequeue();
 
+    //! Verifica apenas ID
+    bool operator ==(const Track& other);
+    bool operator !=(const Track& other);
 
 };
 

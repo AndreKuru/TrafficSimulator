@@ -26,3 +26,12 @@ Car Track::dequeue() {
     available_length_ = available_length_ + car.size();
     return car;
 }
+
+bool Track::operator==(const Track &other) {
+    return id_ == other.id_;
+}
+
+bool Track::operator!=(const Track &other) {
+    return id_!= other.id_;
+}
+
