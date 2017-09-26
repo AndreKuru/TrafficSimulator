@@ -68,3 +68,11 @@ System::System() {
                             tracks.at(tracks.find(Track("S2sul")))));   // efferent3
 
 }
+
+void System::run() {
+    semaphores.at(0).open();
+
+
+
+
+}

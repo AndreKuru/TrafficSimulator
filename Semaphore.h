@@ -6,7 +6,10 @@
 #include "Track.h"
 
 class Semaphore {
+    //! Sinal Verde = true, Vermelho = false
     bool status {false};
+    //! Tempo de sinal verde
+    int time_open {30};
     structures::LinkedList<Track> afferent_track;
     structures::LinkedList<Track> efferent_tracks;
 
@@ -20,7 +23,6 @@ class Semaphore {
 
     void open();
     void close();
-
 };
 
 

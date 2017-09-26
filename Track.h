@@ -49,11 +49,27 @@ class Track : public structures::LinkedQueue<Car>{
     //! Desenfileira carro
     Car dequeue();
 
+    //! Checa se ainda cabe mais algum carro de no mínimo 2m
+    bool full();
+
+    //! Checa se o carro gerado cabe na fila
+    bool fill(Car car);
+
     //! Verifica apenas ID
     bool operator ==(const Track& other);
     bool operator !=(const Track& other);
 
     void add_efferent_track(Track *efferent_track);
+
+    //! Checa quantos carros chegaram desde a última checagem
+    int check_arrival();
+
+    int generate_interval();
+
+    //! Tudo que ocorre enquanto o semaforo está aberto
+    void leak();
+
+
 };
 
 #endif

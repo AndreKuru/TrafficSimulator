@@ -16,6 +16,10 @@ class System {
     void add_track(Track track);
 
     void add_semaphore(Semaphore semaphore);
+
+    void run();
+
+
 };
 
 
