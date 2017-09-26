@@ -1,0 +1,10 @@
+#ifndef TRAFFICSIMULATOR_SYSTEM_H
+#define TRAFFICSIMULATOR_SYSTEM_H
+
+
+class System {
+
+};
+
+
+#endif //TRAFFICSIMULATOR_SYSTEM_H
