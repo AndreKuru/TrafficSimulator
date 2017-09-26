@@ -2,8 +2,19 @@
 #define TRAFFICSIMULATOR_SYSTEM_H
 
 
-class System {
+#include "linked_List.h"
+#include "Track.h"
+#include "Semaphore.h"
 
+class System {
+    structures::LinkedList<Track> tracks;
+    structures::LinkedList<Semaphore> semaphores;
+
+    System();
+
+    void add_track(Track track);
+
+    void add_semaphore(Semaphore semaphore);
 };
 
 
