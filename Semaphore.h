@@ -6,6 +6,7 @@
 #include "Track.h"
 
 class Semaphore {
+    bool status {false};
     structures::LinkedList<Track> afferent_track;
     structures::LinkedList<Track> efferent_tracks;
 
@@ -16,6 +17,9 @@ class Semaphore {
         efferent_tracks.push_back(efferent2);
         efferent_tracks.push_back(efferent3);
     }
+
+    void open();
+    void close();
 
 };
 

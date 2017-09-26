@@ -9,7 +9,7 @@
 #include <ctime>
 
 class Track : public structures::LinkedQueue<Car>{
-    structures::LinkedList<Track> tracks_output;
+    structures::LinkedList<Track> *tracks_output;
     //! ID
     std::string id_;
     //! Fonte tempo base (x onde x+y)
@@ -53,6 +53,7 @@ class Track : public structures::LinkedQueue<Car>{
     bool operator ==(const Track& other);
     bool operator !=(const Track& other);
 
+    void add_efferent_track(Track *efferent_track);
 };
 
 #endif
