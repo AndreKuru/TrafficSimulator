@@ -70,7 +70,11 @@ System::System() {
 }
 
 void System::run() {
-    semaphores.at(0).open();
+    auto track = semaphore->get_afferent_track();
+    track->schedule_arrival_in_track();
+
+
+
 
 
 
