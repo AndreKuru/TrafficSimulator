@@ -15,10 +15,14 @@ class EventOccurrence {
             event_{event},
             time_{time} {}
 
+    bool operator >(const EventOccurrence other);
+    bool operator >=(const EventOccurrence other);
+    bool operator <=(const EventOccurrence other);
+    bool operator <(const EventOccurrence other);
+
  private:
     Events event_;
     std::clock_t time_;
-
 };
 
 

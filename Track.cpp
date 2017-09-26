@@ -49,10 +49,18 @@ void Track::leak() {
 
 }
 
-int Track::check_arrival() {
+void Track::schedule_arrival() {
+    auto time = 0;
     while (last_time > 0) {
-        last_time = last_time - generate_interval();
+        auto interval = generate_interval();
+        last_time = last_time - interval;
+        time = time + interval;
+        clock->insert_sorted(EventOccurrence(ARRIVAL_OF_NEW_CAR, time));
     }
+}
+
+void Track::change_status (int time) {
+    clock->insert_sorted(EventOccurrence(SIGNAL_LIGHT_SHIFT, time));
 }
 
 int Track::generate_interval() {

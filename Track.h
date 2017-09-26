@@ -6,10 +6,14 @@
 #include "array_list.h"
 #include "Car.h"
 #include "linked_List.h"
+#include "Clock.h"
 #include <ctime>
 
 class Track : public structures::LinkedQueue<Car>{
+    //! pistas eferentes
     structures::LinkedList<Track> *tracks_output;
+    //! probabilidade de vazão
+    structures::LinkedList<int> tracks_probalitiy;
     //! ID
     std::string id_;
     //! Fonte tempo base (x onde x+y)
@@ -24,6 +28,7 @@ class Track : public structures::LinkedQueue<Car>{
     int length_;
     //! tamanho restante em m
     int available_length_;
+    Clock* clock;
 
  public:
     Track(std::string id):
@@ -67,7 +72,7 @@ class Track : public structures::LinkedQueue<Car>{
     Track* choose_output ();
 
     //! Checa quantos carros chegaram desde a última checagem
-    int check_arrival();
+    void schedule_arrival();
 
     //! intervalo para o próximo carro
     int generate_interval();
@@ -75,7 +80,7 @@ class Track : public structures::LinkedQueue<Car>{
     //! Tudo que ocorre enquanto o semaforo está aberto
     void leak();
 
-
+    void change_status(int time);
 };
 
 #endif
