@@ -18,7 +18,9 @@ class Track : public structures::LinkedQueue<Car>{
     int fount_variance_;
     //! km/h
     int speed_;
-    //! tamanho em m
+    //! Tempo desde a última verificação de chegada
+    int last_time {0};
+    //! tamanho total em m
     int length_;
     //! tamanho restante em m
     int available_length_;
@@ -59,11 +61,15 @@ class Track : public structures::LinkedQueue<Car>{
     bool operator ==(const Track& other);
     bool operator !=(const Track& other);
 
-    void add_efferent_track(Track *efferent_track);
+    void add_efferent_track(Track *efferent_track, int percentage);
+
+    //! Para qual pista vai o carro
+    Track* choose_output ();
 
     //! Checa quantos carros chegaram desde a última checagem
     int check_arrival();
 
+    //! intervalo para o próximo carro
     int generate_interval();
 
     //! Tudo que ocorre enquanto o semaforo está aberto

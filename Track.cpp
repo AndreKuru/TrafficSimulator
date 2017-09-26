@@ -50,8 +50,15 @@ void Track::leak() {
 }
 
 int Track::check_arrival() {
+    while (last_time > 0) {
+        last_time = last_time - generate_interval();
+    }
 }
 
 int Track::generate_interval() {
     return fount_time_ + rand()%(fount_variance_);
+}
+
+void Track::add_efferent_track(Track *efferent_track, int percentage) {
+
 }
